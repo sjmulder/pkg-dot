@@ -15,6 +15,9 @@ main(int argc, char **argv)
 	puts("digraph {");
 
 	while ((len = getline(&line, &linecap, stdin)) != -1) {
+		if (len < 3)
+			continue;
+
 		if (*line != '\t') {
 			/* "package-1.2:" */
 			free(curpkg);
