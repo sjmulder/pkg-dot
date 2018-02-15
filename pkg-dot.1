@@ -17,11 +17,11 @@ markup to standard output.
 .Sh EXAMPLES
 Graph all of Firefox' dependencies:
 .Pp
-.Dl pkg info -d firefox | dot -Tpng >out.png
+.Dl pkg info -d firefox | pkg-dot | dot -Tpng >out.png
 .Pp
 Or, of all installed packages:
 .Pp
-.Dl pkg info -aq | xargs pkg info -d | dot -Tpng >out.png
+.Dl pkg info -aq | xargs pkg info -d | pkg-dot | dot -Tpng >out.png
 .Sh SEE ALSO
 .Xr dot 1 ,
 .Xr pkg-info 1

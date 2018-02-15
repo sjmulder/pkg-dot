@@ -9,11 +9,11 @@ Examples
 
 Graph all of Firefox' dependencies:
 
-    pkg info -d firefox | dot -Tpng >out.png
+    pkg info -d firefox | pkg-dot | dot -Tpng >out.png
 
 Or, of all installed packages:
 
-    pkg info -aq | xargs pkg info -d | dot -Tpng >out.png
+    pkg info -aq | xargs pkg info -d | pkg-dot | dot -Tpng >out.png
 
 Building
 --------
