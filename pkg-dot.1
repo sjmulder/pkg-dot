@@ -1,0 +1,30 @@
+.Dd Feb 15, 2018
+.Dt PKG-DOT 1
+.Os
+.Sh NAME
+.Nm pkg-dot
+.Nd Convert a
+.Xr pkg-info 1 dependency list into a
+.Xr dot 1 diagram.
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+Reads the output of FreeBSD's
+.Li pkg info -d
+from standard input and writes
+.Xr dia 1
+markup to standard output.
+.Sh EXAMPLES
+Graph all of Firefox' dependencies:
+.Pp
+.Dl pkg info -d firefox | dot -Tpng >out.png
+.Pp
+Or, of all installed packages:
+.Pp
+.Dl pkg info -aq | xargs pkg info -d | dot -Tpng >out.png
+.Sh SEE ALSO
+.Xr dot 1 ,
+.Xr pkg-info 1
+.Sh AUTHORS
+.An Sijmen J. Mulder
+.Aq Mt ik@sjmulder.nl .
